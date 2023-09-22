@@ -1,7 +1,17 @@
-const App = () => {
-  return (
-    <h1 className='text-black font-bold'>HELLO</h1>
-  )
-}
+import PostList from "./features/posts/PostList.tsx";
+import PostSingle from "./features/posts/PostSingle.tsx";
+import { Route, Routes } from "react-router-dom";
 
-export default App
+const App = () => {
+
+  return (
+    <main className='p-4'>
+      <Routes>
+        <Route path="/" element={<PostList/>}/>
+        <Route path="/posts/:id" element={<PostSingle/>}/>
+      </Routes>
+    </main>
+  )
+};
+
+export default App;
